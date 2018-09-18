@@ -1,4 +1,4 @@
-# Collision With Jquery
+# Draggable and Collision With Jquery
 
 In this article I am going to explain with a single example how make a collision between two div using draggable to move put a div over others and once those div touch each other then the static one become part of the draggable one.
 
