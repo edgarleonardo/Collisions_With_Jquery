@@ -4,6 +4,18 @@ In this article I am going to explain with a single example how make a collision
 
 We are going to use an html that is publish on my github for any consulting, in that html we are going to see four divs, three static and motionless and the other one dynamic using Draggable component of the Jquery Library.
 
+Image Examples:
+
+![This is how the html looks like once we refresh the page](https://raw.githubusercontent.com/edgarleonardo/Collisions_With_Jquery/master/image1.jpg)
+
+![This is how the html looks like once a littler div is swallowed](https://raw.githubusercontent.com/edgarleonardo/Collisions_With_Jquery/master/image2.jpg)
+
+
+![This is how the html looks like once a second div is swallowed](https://raw.githubusercontent.com/edgarleonardo/Collisions_With_Jquery/master/image3.jpg)
+
+
+![This is how the html looks like once a third div is swallowed](https://raw.githubusercontent.com/edgarleonardo/Collisions_With_Jquery/master/image4.jpg)
+
 
 ## A Bit Explanation
 
