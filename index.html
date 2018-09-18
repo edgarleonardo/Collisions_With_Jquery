@@ -1,0 +1,87 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+  <style>
+  .container {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+}
+.target {
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+}
+
+.finalComponent {
+   border-radius: 40%;
+    behavior: url(PIE.htc);
+    width: 10px;
+    height: 10px;
+    background: red;
+    border: 3px solid #000;
+}
+  </style>
+  <script>      
+      function collitionsObjects
+      (containerclass, collitionsClass)
+       {
+  $(function() {
+      var collitionClass = collitionsClass;      
+$(containerclass).draggable({
+    containment: "document",
+    drag: function(event, ui) {
+        var draggableDiv = $(this);
+        $(collitionClass).each(function( index, div ) {
+        if (calculateCollition(draggableDiv, $(div)))
+        {
+            var newDiv = $('<div  class="finalComponent" style="position:relative;"></div>');
+            $(div).css({'display': 'none'}); 
+            $( ".container").append(newDiv );
+        }
+});
+    },
+    stop: function(event, ui) {
+    }
+});
+
+function calculateCollition($draggableDiv, $obstacleDiv) {
+        var x1 = $draggableDiv.offset().left;
+        var y1 = $draggableDiv.offset().top;
+        var h1 = $draggableDiv.outerHeight(true);
+        var w1 = $draggableDiv.outerWidth(true);
+        var b1 = y1 + h1;
+        var r1 = x1 + w1;
+        var x2 = $obstacleDiv.offset().left;
+        var y2 = $obstacleDiv.offset().top;
+        var h2 = $obstacleDiv.outerHeight(true);
+        var w2 = $obstacleDiv.outerWidth(true);
+        var b2 = y2 + h2;
+        var r2 = x2 + w2;
+
+        if (
+            b1 < y2 || 
+            y1 > b2 || 
+            r1 < x2 || 
+            x1 > r2
+        ) return false;
+        return true;
+      }
+});
+}
+
+/// Calling the collition funtion
+collitionsObjects('.container', '.target')
+  </script>
+</head>
+<body>
+    <div class="container" ></div>
+
+<div id="target_1" class="target" style="position: absolute; top: 300px; left: 100px;"></div>
+<div id="target_2" class="target" style="position: absolute; top: 300px; left: 200px;"></div>
+<div id="target_3" class="target" style="position: absolute; top: 300px; left: 300px;"></div>
+
+</body>
+</html>
